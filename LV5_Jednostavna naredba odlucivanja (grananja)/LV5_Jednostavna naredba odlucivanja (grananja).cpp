@@ -141,8 +141,6 @@ void NogometniTurnir()
 	int Zagreb2;
 	int ukupnoZG;
 	int ukupnoST;
-	ukupnoZG = Zagreb1 + Zagreb2;
-	ukupnoST = Split1 + Split2;
 	cout << "U prvoj utakmici domacin (Zagreb) je zabio: ";
 	cin >> Zagreb1;
 	cout << "U prvoj utakmici gosti (Split) su zabili: ";
@@ -151,15 +149,21 @@ void NogometniTurnir()
 	cin >> Zagreb2;
 	cout << "U drugoj utakmici domacin (Split) je zabio: ";
 	cin >> Split1;
+	ukupnoZG = Zagreb1 + Zagreb2;
+	ukupnoST = Split1 + Split2;
 
 	if (ukupnoZG > ukupnoST)
 		cout << "Zagreb - razlika u golovima je " << ukupnoZG - ukupnoST;
-	else if ((Zagreb1 + Zagreb2) < (Split1 + Split2))
-		cout << "Split - razlika u golovima je " << ((Split1 + Split2) - (Zagreb1 + Zagreb2));
-	else if ((Zagreb1 + Zagreb2) == (Split1 + Split2) && (Zagreb2 > Split1))
+	else if (ukupnoZG < ukupnoST)
+		cout << "Split - razlika u golovima je " << ukupnoST - ukupnoZG;
+	else if (ukupnoZG == ukupnoST)
+	{
+	if (Zagreb2 > Split1)
 		cout << "Zagreb - razlika u golovima je nula";
-	else if ((Zagreb1 + Zagreb2) == (Split1 + Split2) && (Split1 > Zagreb2))
-		cout << "Split - razlika u golovima je nula";
-	else if ((Zagreb1 + Zagreb2) == (Split1 + Split2) && (Zagreb2 + Split1) == (Split1 + Zagreb2))
+	else if ((Zagreb2 + Split1) == (Zagreb1 + Split2))
 		cout << "Jedanaesterci";
+	else if (Zagreb2 < Split1)
+		cout << "Split - razlika u golovima je nula";
+
+	}
 }
