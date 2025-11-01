@@ -132,3 +132,34 @@ void kalkulator()
 		cout << "Rezultat je: " << a / b;
 
 }
+
+void NogometniTurnir()
+{
+	int Zagreb1;
+	int Split2;
+	int Split1;
+	int Zagreb2;
+	int ukupnoZG;
+	int ukupnoST;
+	ukupnoZG = Zagreb1 + Zagreb2;
+	ukupnoST = Split1 + Split2;
+	cout << "U prvoj utakmici domacin (Zagreb) je zabio: ";
+	cin >> Zagreb1;
+	cout << "U prvoj utakmici gosti (Split) su zabili: ";
+	cin >> Split2;
+	cout << "U drugoj utakmici gosti (Zagreb) su zabili: ";
+	cin >> Zagreb2;
+	cout << "U drugoj utakmici domacin (Split) je zabio: ";
+	cin >> Split1;
+
+	if (ukupnoZG > ukupnoST)
+		cout << "Zagreb - razlika u golovima je " << ukupnoZG - ukupnoST;
+	else if ((Zagreb1 + Zagreb2) < (Split1 + Split2))
+		cout << "Split - razlika u golovima je " << ((Split1 + Split2) - (Zagreb1 + Zagreb2));
+	else if ((Zagreb1 + Zagreb2) == (Split1 + Split2) && (Zagreb2 > Split1))
+		cout << "Zagreb - razlika u golovima je nula";
+	else if ((Zagreb1 + Zagreb2) == (Split1 + Split2) && (Split1 > Zagreb2))
+		cout << "Split - razlika u golovima je nula";
+	else if ((Zagreb1 + Zagreb2) == (Split1 + Split2) && (Zagreb2 + Split1) == (Split1 + Zagreb2))
+		cout << "Jedanaesterci";
+}
