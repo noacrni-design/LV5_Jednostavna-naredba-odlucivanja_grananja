@@ -1,5 +1,5 @@
 // LV5_Jednostavna naredba odlucivanja (grananja).cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Autor: Noa Crnoja 1.G
 
 #include <iostream>
 using namespace std;
